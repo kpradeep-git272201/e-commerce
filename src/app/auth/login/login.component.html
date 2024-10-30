@@ -1,0 +1,52 @@
+<mat-card style="background-color: lightgray;">
+	<mat-card-content style="margin: 20px;">
+		<div fxLayout="row" fxLayoutAlign="start center" class="bg"> <!-- Set a height for the row -->
+			<div fxFlex="30%" fxLayout="column" fxLayoutAlign="center center"
+				style="background-color: white; padding: 20px;"> <!-- First column with 35% width -->
+				<div style="text-align: center; margin-left: 40px; margin-right: 40px;">
+					<div style="display:block;text-align: center; margin-bottom: 40px;">
+						<img src="assets/logo/my_logo.jpg" alt="Company Logo" style="width: 90%; height: 50%;">
+					</div>
+					<form [formGroup]="loginForm" (ngSubmit)="onLogin()">
+						<p>
+							<mat-form-field appearance="outline" class="custom-form-field" style="width: 100%; margin-bottom: -18px;">
+								<mat-label>Email</mat-label>
+								<input matInput formControlName="userName" placeholder="Email Id" required>
+							</mat-form-field>
+						</p>
+						<p>
+							<mat-form-field appearance="outline" class="custom-form-field" style="width: 100%;">
+								<mat-label>Password</mat-label>
+								<input matInput type="password" formControlName="password" required placeholder="Password">
+							</mat-form-field>
+						</p>
+						<div class="example-button-row">
+							<button mat-button class="loginBtn" type="submit" style="color: white;">Sign in</button>
+						</div>
+					</form>
+					
+					<p class="signUpClass">Create an account <a>Sing Up</a></p>
+					<p class="forgot"><a>Forgot Password</a></p>
+				</div>
+			</div>
+			<div fxFlex="70%"> <!-- Second column with 65% width -->
+				<ngb-carousel #carousel [interval]="1000" [pauseOnHover]="pauseOnHover"
+					[pauseOnFocus]="pauseOnFocus" (slide)="onSlide($event)">
+					<ng-template *ngFor="let img of images; let i = index" ngbSlide>
+						<div class="carousel-caption">
+							<h3>My slide {{ i + 1 }} title</h3>
+						</div>
+						<a href="https://www.google.fr/?q=Number+{{ i + 1 }}" target="_blank"
+							rel="nofollow noopener noreferrer">
+							<div class="picsum-img-wrapper">
+								<img [src]="img" alt="My image {{ i + 1 }} description" />
+							</div>
+						</a>
+					</ng-template>
+				</ngb-carousel>
+			</div>
+		</div>
+	</mat-card-content>
+</mat-card>
+
+	
