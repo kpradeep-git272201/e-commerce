@@ -41,10 +41,11 @@ export class LoginComponent {
     }else{
       this.errorMessage = 'Invalid credentials';
     }
-    
-
   }
 
+  signUp(){
+    this.router.navigate(["auth/signup"]);
+  }
   togglePaused() {
 		if (this.paused) {
 			this.carousel.cycle();

@@ -1,1 +1,64 @@
-<p>sign-up works!</p>
+<mat-card style="background-color: lightgray;">
+	<mat-card-content style="margin: 20px;">
+	  <div fxLayout="row" fxLayoutAlign="start center" class="bg" fxLayout.xs="column" fxLayoutAlign.xs="center center">
+		<!-- Set to column layout on small screens -->
+		
+		<div fxFlex="30%" fxFlex.xs="100%" fxLayout="column" fxLayoutAlign="center center"
+			 style="background-color: white; padding: 20px;">
+		  <!-- First column, full width on mobile -->
+		  
+		  <div style="text-align: center; margin-left: 40px; margin-right: 40px;">
+			<div style="display: block; text-align: center; margin-bottom: 35px;">
+			  <img src="assets/logo/my_logo.jpg" alt="Company Logo" 
+				   style="width: 90%; height: auto; max-width: 200px;">
+			  <!-- Restrict logo size for smaller screens -->
+			</div>
+			<form [formGroup]="signUpForm" (ngSubmit)="onSignUp()">
+			  <p>
+				<mat-form-field appearance="outline" class="custom-form-field" style="width: 100%; margin-bottom: -9px;">
+				  <mat-label>Email</mat-label>
+				  <input matInput formControlName="userName" placeholder="Email Id" required>
+				</mat-form-field>
+			  </p>
+			  <p>
+				<mat-form-field appearance="outline" class="custom-form-field" style="width: 100%; margin-bottom: -9px;">
+				  <mat-label>Password</mat-label>
+				  <input matInput type="password" formControlName="password" required placeholder="Password">
+				</mat-form-field>
+			  </p>
+              <p>
+				<mat-form-field appearance="outline" class="custom-form-field" style="width: 100%;">
+				  <mat-label>Confirm Password</mat-label>
+				  <input matInput type="password" formControlName="confirmPassword" required placeholder="Confirm Password">
+				</mat-form-field>
+			  </p>
+			  <div class="example-button-row">
+				<button mat-button class="loginBtn" type="submit" style="color: white;">Sign Up</button>
+			  </div>
+			</form>
+			<p class="signUpClass">Have you? <a (click)="login()">Sign in</a></p>
+		  </div>
+		</div>
+  
+		<div fxFlex="70%" fxFlex.xs="100%">
+		  <!-- Second column, full width on mobile -->
+		  
+		  <ngb-carousel #carousel [interval]="1000" [pauseOnHover]="pauseOnHover"
+						[pauseOnFocus]="pauseOnFocus" (slide)="onSlide($event)">
+			<ng-template *ngFor="let img of images; let i = index" ngbSlide>
+			  <div class="carousel-caption">
+				<h3>My slide {{ i + 1 }} title</h3>
+			  </div>
+			  <a href="https://www.google.fr/?q=Number+{{ i + 1 }}" target="_blank"
+				 rel="nofollow noopener noreferrer">
+				<div class="picsum-img-wrapper">
+				  <img [src]="img" alt="My image {{ i + 1 }} description" style="width: 100%;">
+				</div>
+			  </a>
+			</ng-template>
+		  </ngb-carousel>
+		</div>
+	  </div>
+	</mat-card-content>
+  </mat-card>
+  

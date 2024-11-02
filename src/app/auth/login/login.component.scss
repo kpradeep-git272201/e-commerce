@@ -208,3 +208,9 @@
 ::ng-deep .mat-form-field {
     font-size: 12px; // example
 }
+
+p a:hover{
+	font-weight: bold;
+	color: blue;
+	cursor: pointer;
+}
