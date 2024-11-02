@@ -162,5 +162,9 @@ export class MaterialModule {
       'product-icon',  // Custom icon name
       this.sanitizer.bypassSecurityTrustResourceUrl('assets/icons/product-icon.svg') // Path to your SVG
     );
+    this.iconRegistry.addSvgIcon(
+      'logout-icon',  // Custom icon name
+      this.sanitizer.bypassSecurityTrustResourceUrl('assets/icons/logout-icon.svg') // Path to your SVG
+    );
   }
 }
