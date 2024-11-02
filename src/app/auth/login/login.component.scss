@@ -203,3 +203,8 @@
 .bg{
 	background-color: var(--my-theme-bg);
 }
+
+
+::ng-deep .mat-form-field {
+    font-size: 12px; // example
+}
