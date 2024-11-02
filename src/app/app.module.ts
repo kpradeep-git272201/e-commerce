@@ -28,11 +28,5 @@ import { MatIconRegistry } from '@angular/material/icon';
   bootstrap: [AppComponent]
 })
 export class AppModule { 
-  // constructor(private iconRegistry: MatIconRegistry, private sanitizer: DomSanitizer) {
-  //   this.iconRegistry.addSvgIcon(
-  //     'product-icon',  // Custom icon name
-  //     this.sanitizer.bypassSecurityTrustResourceUrl('assets/icons/product-icon.svg') // Path to your SVG
-  //   );
-  // }
 
 }
