@@ -16,7 +16,12 @@ export class AppComponent {
 
   ngOnInit() {
     if (this.service.isLoggedIn()) {
-      this.router.navigate(['/main/dashboard']); // Redirect to dashboard if logged in
+      const savedPath = localStorage.getItem('currentPath');
+      if (savedPath) {
+        this.router.navigate([savedPath]);
+      }else{
+        this.router.navigate(['/main/dashboard']); // /main/dashboard' Redirect to dashboard if logged in
+      }
     } else {
       this.router.navigate(['auth/login']); // Redirect to login if not logged in
     }

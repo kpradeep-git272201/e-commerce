@@ -18,7 +18,7 @@
                         </mat-expansion-panel-header>
                         <mat-divider></mat-divider>
                         <div class="app-div" *ngFor="let subApp of app.subApps">
-                            <li class="nav-list-item" (click)="goToLIst(app, subApp)">
+                            <li class="nav-list-item" (click)="goToList(app, subApp)">
                                 <mat-icon>{{subApp.icon}}</mat-icon>
                                 <a>{{subApp.subAppName}}</a>
                             </li>

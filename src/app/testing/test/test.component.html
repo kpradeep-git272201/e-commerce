@@ -1,0 +1,69 @@
+<div class="download-btn-container">
+    <button style="
+            margin-top: 3px;
+            margin-right: 10px;"
+            class="download-btn"  
+            mat-button (click)="downloadFeeReceipt()">
+            <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="download"></mat-icon>
+            Receipt Dwonload</button>
+</div>
+<div class="receipt-container">
+    <!-- School Name & Address -->
+    <div class="header">
+        <h2>{{ receiptData.school.name.toUpperCase() }}</h2>
+        <p style="margin: 0px; font-size: 11px;"><i>{{ receiptData.school.affiliated }}</i></p>
+        <p style="margin: 0px;"><b>{{ receiptData.school.applicationNo }}</b></p>
+        <p style="margin: 0px;">{{ receiptData.school.address }}</p>
+        <p style="margin: 0px; margin-bottom: 30px;">{{ receiptData.school.contact }}</p>
+        <h3>FEE RECEIPT - {{ receiptData.session }}</h3>
+    </div>
+
+    <!-- Student & Payment Details -->
+    <div class="details">
+        <div class="column">
+            <p><strong>Name:</strong> {{ receiptData.student.name }}</p>
+            <p><strong>Father's Name:</strong> {{ receiptData.student.fatherName }}</p>
+            <p><strong>Class:</strong> {{ receiptData.student.class }}</p>
+            <p><strong>Admission No.:</strong> {{ receiptData.student.admissionNo }}</p>
+            <p><strong>Receipt No.:</strong> {{ receiptData.receipt.receiptNo }}</p>
+        </div>
+        <div class="column">
+            <p><strong>Date:</strong> {{ receiptData.receipt.date }}</p>
+            <p><strong>Mode:</strong> {{ receiptData.receipt.mode }}</p>
+            <p><strong>Bank:</strong> {{ receiptData.receipt.bank }}</p>
+            <p><strong>Transaction ID:</strong> {{ receiptData.receipt.transactionId }}</p>
+        </div>
+    </div>
+
+    <!-- Fee Table -->
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Amount (₹)</th>
+            <th>Fine (₹)</th>
+            <th>Total (₹)</th>
+        </tr>
+        <tr *ngFor="let item of receiptData.fees">
+            <td>{{ item.name }}</td>
+            <td>{{ item.amount }}</td>
+            <td>{{ item.fine }}</td>
+            <td>{{ item.amount + item.fine }}</td>
+        </tr>
+        <tr class="total">
+            <td><strong>Total</strong></td>
+            <td><strong>₹{{ receiptData.total.amount }}</strong></td>
+            <td><strong>₹{{ receiptData.total.fine }}</strong></td>
+            <td><strong>₹{{ receiptData.total.grandTotal }}</strong></td>
+        </tr>
+        <tr>
+            <td colspan="4" class="total-words">
+                <strong>Total in words:</strong> {{ receiptData.total.inWords }}
+            </td>
+        </tr>
+    </table>
+
+    <!-- Footer Note -->
+    <p class="footer-note">
+        This is a computer-generated receipt. Hence, it does not require a signature or seal.
+    </p>
+</div>
