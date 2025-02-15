@@ -16,7 +16,7 @@ export class AppComponent {
 
   ngOnInit() {
     if (this.service.isLoggedIn()) {
-      this.router.navigate(['/main/dashboard']); // Redirect to dashboard if logged in
+      this.router.navigate(['/main/testing/test']); // /main/dashboard' Redirect to dashboard if logged in
     } else {
       this.router.navigate(['auth/login']); // Redirect to login if not logged in
     }

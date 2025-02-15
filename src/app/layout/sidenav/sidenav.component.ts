@@ -84,6 +84,9 @@ export class SidenavComponent {
     } else if(subAppId.appId=="1064"){
       this.router.navigate(['/main/setting/shipping-delivery']);
     } 
+    else if(subAppId.appId=="1071"){
+      this.router.navigate(['/main/testing/test']);
+    } 
   }
 
 }

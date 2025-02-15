@@ -168,7 +168,20 @@ export class CommonDataService {
       appName: "Support",
       icon: "help",
       childApp: false
-    }
+    },
+    {
+      appId: 107,
+      appName: "Testing",
+      icon: "edit",
+      childApp: true,
+      subApps: [
+        {
+          appId: 1071,
+          subAppName: "Test",
+          icon: "filter_tilt_shift"
+        },
+      ]
+    },
   ];
 
   private loggedIn = false;
@@ -194,5 +207,42 @@ export class CommonDataService {
 
   isLoggedIn(): boolean {
     return this.loggedIn || !!localStorage.getItem('user');
+  }
+
+
+  getReceiptData(){
+    return {
+      school: {
+        name: 'NISCORT Father Agnel School',
+        affiliated: '(A Senior Secondary School - Affiliated to CBSE, Delhi)',
+        applicationNo: 'APPLICATION No.: 213264',
+        address: 'A-2 Sector-I, Vaishali, Ghaziabad, UP-201012',
+        contact: '0120-2776500, 2771010'
+      },
+      session: '2023-2024',
+      student: {
+        name: 'HRADHYA SINGH',
+        fatherName: 'KAMLESH PRATAP SINGH',
+        class: 'V CAMELLIA',
+        admissionNo: 858
+      },
+      receipt: {
+        receiptNo: 7815,
+        date: '09/01/2024',
+        mode: 'Online',
+        bank: 'PG',
+        transactionId: 'pay_NMXOTmmtfNka3J'
+      },
+      fees: [
+        { name: 'TUITION FEE [JANUARY, FEBRUARY, MARCH]', amount: 19545, fine: 0 },
+        { name: 'LEGO [JANUARY, FEBRUARY, MARCH]', amount: 450, fine: 0 }
+      ],
+      total: {
+        amount: 19995,
+        fine: 0,
+        grandTotal: 19995,
+        inWords: 'Rupees Nineteen Thousand Nine Hundred Ninety Five'
+      }
+    };
   }
 }
