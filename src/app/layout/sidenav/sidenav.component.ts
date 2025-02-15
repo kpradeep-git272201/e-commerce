@@ -34,59 +34,62 @@ export class SidenavComponent {
     } 
   }
 
-  goToLIst(app:any, subAppId:any){
-    if(subAppId.appId=="1021"){
-      this.router.navigate(['/main/product/view-product']);
-    } else if(subAppId.appId=="1022"){
-      this.router.navigate(['/main/product/add-product']);
-    } else if(subAppId.appId=="1023"){
-      this.router.navigate(['/main/product/categories']);
-    } else if(subAppId.appId=="1024"){
-      this.router.navigate(['/main/product/inventory']);
-    } 
-    else if(subAppId.appId=="1031"){
-      this.router.navigate(['/main/order/view-order']);
-    } else if(subAppId.appId=="1032"){
-      this.router.navigate(['/main/order/add-order']);
-    } else if(subAppId.appId=="1033"){
-      this.router.navigate(['/main/order/order-tracking']);
-    } else if(subAppId.appId=="1034"){
-      this.router.navigate(['/main/order/retrun-and-refund']);
+  goToList(app: any, subAppId: any) {
+    let routePath = '';
+  
+    if (subAppId.appId == "1021") {
+      routePath = '/main/product/view-product';
+    } else if (subAppId.appId == "1022") {
+      routePath = '/main/product/add-product';
+    } else if (subAppId.appId == "1023") {
+      routePath = '/main/product/categories';
+    } else if (subAppId.appId == "1024") {
+      routePath = '/main/product/inventory';
+    } else if (subAppId.appId == "1031") {
+      routePath = '/main/order/view-order';
+    } else if (subAppId.appId == "1032") {
+      routePath = '/main/order/add-order';
+    } else if (subAppId.appId == "1033") {
+      routePath = '/main/order/order-tracking';
+    } else if (subAppId.appId == "1034") {
+      routePath = '/main/order/retrun-and-refund';
+    } else if (subAppId.appId == "1041") {
+      routePath = '/main/customer/customer-list';
+    } else if (subAppId.appId == "1042") {
+      routePath = '/main/customer/add-customer';
+    } else if (subAppId.appId == "1043") {
+      routePath = '/main/customer/customer-detail';
+    } else if (subAppId.appId == "1044") {
+      routePath = '/main/customer/customer-feedback';
+    } else if (subAppId.appId == "1045") {
+      routePath = '/main/customer/manage-review';
+    } else if (subAppId.appId == "1051") {
+      routePath = '/main/admin/profile';
+    } else if (subAppId.appId == "1052") {
+      routePath = '/main/admin/role-permissions';
+    } else if (subAppId.appId == "1053") {
+      routePath = '/main/admin/setting';
+    } else if (subAppId.appId == "1054") {
+      routePath = '/main/admin/system-logs';
+    } else if (subAppId.appId == "1055") {
+      routePath = '/main/admin/user-management';
+    } else if (subAppId.appId == "1061") {
+      routePath = '/main/setting/profile-setting';
+    } else if (subAppId.appId == "1062") {
+      routePath = '/main/setting/notification';
+    } else if (subAppId.appId == "1063") {
+      routePath = '/main/setting/payment-method';
+    } else if (subAppId.appId == "1064") {
+      routePath = '/main/setting/shipping-delivery';
+    } else if (subAppId.appId == "1071") {
+      routePath = '/main/testing/test';
     }
-    else if(subAppId.appId=="1041"){
-      this.router.navigate(['/main/customer/customer-list']);
-    } else if(subAppId.appId=="1042"){
-      this.router.navigate(['/main/customer/add-customer']);
-    } else if(subAppId.appId=="1043"){
-      this.router.navigate(['/main/customer/customer-detail']);
-    } else if(subAppId.appId=="1044"){
-      this.router.navigate(['/main/customer/customer-feedback']);
-    } else if(subAppId.appId=="1045"){
-      this.router.navigate(['/main/customer/manage-review']);
+  
+    if (routePath) {
+      localStorage.setItem('currentPath', routePath);
+      this.router.navigate([routePath]);
     }
-    else if(subAppId.appId=="1051"){
-      this.router.navigate(['/main/admin/profile']);
-    } else if(subAppId.appId=="1052"){
-      this.router.navigate(['/main/admin/role-permissions']);
-    } else if(subAppId.appId=="1053"){
-      this.router.navigate(['/main/admin/setting']);
-    } else if(subAppId.appId=="1054"){
-      this.router.navigate(['/main/admin/system-logs']);
-    } else if(subAppId.appId=="1055"){
-      this.router.navigate(['/main/admin/user-management']);
-    }
-    else if(subAppId.appId=="1061"){
-      this.router.navigate(['/main/setting/profile-setting']);
-    } else if(subAppId.appId=="1062"){
-      this.router.navigate(['/main/setting/notification']);
-    } else if(subAppId.appId=="1063"){
-      this.router.navigate(['/main/setting/payment-method']);
-    } else if(subAppId.appId=="1064"){
-      this.router.navigate(['/main/setting/shipping-delivery']);
-    } 
-    else if(subAppId.appId=="1071"){
-      this.router.navigate(['/main/testing/test']);
-    } 
   }
+  
 
 }

@@ -215,8 +215,8 @@ export class CommonDataService {
       school: {
         name: 'NISCORT Father Agnel School',
         affiliated: '(A Senior Secondary School - Affiliated to CBSE, Delhi)',
-        applicationNo: 'APPLICATION No.: 213264',
-        address: 'A-2 Sector-I, Vaishali, Ghaziabad, UP-201012',
+        applicationNo: 'APPLICATION No. : 213264',
+        address: 'A-2 Sector-I, Vaishali, Ghaziabad, U.P. - 201012',
         contact: '0120-2776500, 2771010'
       },
       session: '2023-2024',
