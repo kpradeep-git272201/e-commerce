@@ -8,9 +8,10 @@ import * as pdfFonts from 'pdfmake/build/vfs_fonts';
 
 
 @Component({
-  selector: 'app-test',
-  templateUrl: './test.component.html',
-  styleUrls: ['./test.component.scss']
+    selector: 'app-test',
+    templateUrl: './test.component.html',
+    styleUrls: ['./test.component.scss'],
+    standalone: false
 })
 export class TestComponent {
   receiptData: any;

@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-add-customer',
-  templateUrl: './add-customer.component.html',
-  styleUrls: ['./add-customer.component.scss']
+    selector: 'app-add-customer',
+    templateUrl: './add-customer.component.html',
+    styleUrls: ['./add-customer.component.scss'],
+    standalone: false
 })
 export class AddCustomerComponent {
 
